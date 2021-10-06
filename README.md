@@ -3,7 +3,7 @@ BackEnd Server
 
 Instructions to run the project: 
 1. Download repo
-2. Download MongoDB (used local mongodb and used some json data to seed it) 
+2. Download MongoDB (used local database and json data to seed it) 
 3. Run Mongo (In terminal type following commands)
      a. mongod
      b. mongo
