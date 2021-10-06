@@ -26,19 +26,29 @@ function randomDate(start, end) {
 
 const sample = array => array[Math.floor(Math.random() * array.length)];
 
+
+
 const seedDB = async () => {
     //delete everything
     await Doctor.deleteMany({});
-
+    await Appointment.deleteMany({});
     //Make new doctors
     for(let i=0; i<10; i++){
-        const appointment = new Appointment({date: randomDate(new Date(2021, 11, 1), new Date(2022, 12,31))});
+
+        const appointment = new Appointment({
+            date: randomDate(new Date(2021, 11, 1), new Date(2022, 12,31)),
+            patient_name: `${sample(first)} , ${sample(names)}`,
+            kind: `${sample(['New Patient', 'Follow Up'])}`
+        });
+
         const doctor = new Doctor({
             name: `${sample(first)} , ${sample(names)}`,
             appointments: [
                 appointment
-            ]
+            ],
+            
         })
+
         await doctor.save();
         await appointment.save();
     }
