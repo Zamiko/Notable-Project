@@ -75,7 +75,7 @@ app.post('/doctors/:id/appointments', async (req,res) =>{
     doctor.appointments.push(appointment);
     await appointment.save();
     await doctor.save();
-    res.send(req.body);
+    res.send(appointment);
 
 })
 
