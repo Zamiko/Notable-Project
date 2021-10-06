@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Doctor</title>
+</head>
+<body>
+    <h1>Edit Doctor</h1>
+
+    <form action="/doctors/<%=doctor._id%>?_method=PUT" method="POST">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="doctor[name]" value="<%= doctor.name %> ">
+        </div>
+
+        <button>Update Doctor</button>
+    </form>
+    
+    <!-- Link to all objs - Index Page -->
+    <a href="/doctors/<%=doctor._id%> ">Back to Doctor</a>
+
+
+</body>
+</html>
